@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "start": "deno run --allow-net=xkcd.com --allow-write=./comics index.ts"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "scraper-node",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Scraper from get xkcd Comics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpaddeo/nextjs-deno-xkcd.git"
+  },
+  "keywords": [
+    "xkcd",
+    "refactor",
+    "nextjs",
+    "tailwind",
+    "deno"
+  ],
+  "author": "Juan Pablo Addeo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpaddeo/nextjs-deno-xkcd/issues"
+  },
+  "homepage": "https://github.com/jpaddeo/nextjs-deno-xkcd#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "fs-extra": "^10.0.1",
+    "image-size": "^1.0.1"
+  }
+}
