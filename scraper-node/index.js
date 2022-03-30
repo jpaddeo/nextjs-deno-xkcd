@@ -5,7 +5,7 @@ import { log, time } from './log.js';
 import { getImageSize } from './images.js';
 
 const XKCD_COMIC_INITIAL_ID = 2500;
-const XKCD_COMIC_MAX_ID = 2588;
+const XKCD_COMIC_MAX_ID = 2550;
 const COMICS_FOLDER_PATH = './comics';
 
 const indexFileContent = [];
@@ -27,9 +27,5 @@ for (let id = XKCD_COMIC_INITIAL_ID; id < XKCD_COMIC_MAX_ID; id++) {
 }
 await writeJSON(`${COMICS_FOLDER_PATH}/index.json`, indexFileContent);
 log(`Wrote index.json...`);
-
-log(`Copying comics to frontend...`);
-await copy('./comics', '../frontend/comics');
-log(`Comics copied ok...`);
 
 endTime();
