@@ -1,6 +1,9 @@
 import algoliasearch from 'algoliasearch/lite';
 
-const client = algoliasearch('XIY1R5G3P7', '9b079b5cc02119015575aa22b8e9ae67');
+const client = algoliasearch(
+  process.env.ALGOLIA_APP_ID,
+  process.env.ALGOLIA_APP_KEY
+);
 const index = client.initIndex('comics');
 
 export const search = async (query) => {
