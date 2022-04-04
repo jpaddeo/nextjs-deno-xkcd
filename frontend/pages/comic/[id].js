@@ -49,10 +49,16 @@ const ComicPage = ({
 
 export default ComicPage;
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ locales }) {
   const files = await fs.readdir('./comics');
-  const paths = files.map((file) => {
-    return { params: { id: file.split('.')[0] } };
+  let paths = [];
+  locales.forEach((locale) => {
+    paths = paths.concat(
+      files.map((file) => {
+        const [id] = file.split('.');
+        return { params: { id }, locale };
+      })
+    );
   });
   return { paths, fallback: false };
 }

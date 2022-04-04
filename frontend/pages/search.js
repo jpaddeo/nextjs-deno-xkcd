@@ -4,7 +4,11 @@ import Layout from '../components/Layout';
 
 import { search } from '../services/search.js';
 
+import { useI18N } from '../contexts/i18n';
+
 const SearchPage = ({ query, results }) => {
+  const { _T } = useI18N();
+
   return (
     <>
       <Head>
@@ -15,9 +19,7 @@ const SearchPage = ({ query, results }) => {
         <title>xkcd 2.0 - search</title>
       </Head>
       <Layout>
-        <h1>
-          {results.length} founded by searching comic with query {query}
-        </h1>
+        <h1>{_T('SEARCH_RESULTS', results.length, query)}</h1>
       </Layout>
     </>
   );

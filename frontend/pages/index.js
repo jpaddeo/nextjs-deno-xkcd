@@ -5,7 +5,11 @@ import fs from 'fs/promises';
 import Layout from '../components/Layout';
 import LatestComics from '../components/LatestComics';
 
+import { useI18N } from '../contexts/i18n';
+
 export default function Home({ latestComics }) {
+  const { _T } = useI18N();
+  
   return (
     <>
       <Head>

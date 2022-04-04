@@ -6,6 +6,7 @@ const Header = () => {
   const searchRef = useRef();
 
   const getSearchValue = () => searchRef.current?.value;
+  
   const handleChangeSearch = () => {
     const q = getSearchValue();
     if (!q) return;

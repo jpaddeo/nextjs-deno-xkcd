@@ -4,6 +4,10 @@ const nextConfig = {
   images: {
     domains: ['xkcd.com', 'imgs.xkcd.com'],
   },
+  i18n: {
+    locales: ['en', 'es'],
+    defaultLocale: 'en',
+  },
 };
 
 module.exports = nextConfig;
