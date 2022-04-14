@@ -12,18 +12,16 @@ const LatestComics = ({ latestComics }) => {
       <h2 className='text-3xl font-bold text-center mb-10'>
         {_T('LATEST_COMICS')}
       </h2>
-      <section className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-        {latestComics.map((comic) => {
-          return (
-            <article key={comic.id}>
-              <Link href={`/comic/${comic.id}`}>
-                <a href={comic.link}>
-                  <Comic {...comic} />
-                </a>
-              </Link>
-            </article>
-          );
-        })}
+      <section className='grid grid-cols-1 md:grid-cols-2 divide-x-4 divide-y-4 divide-gray-300'>
+        {latestComics.map((comic) => (
+          <article key={comic.id}>
+            <Link href={`/comic/${comic.id}`}>
+              <a href={comic.link}>
+                <Comic {...comic} showLinks={false} />
+              </a>
+            </Link>
+          </article>
+        ))}
       </section>
     </>
   );

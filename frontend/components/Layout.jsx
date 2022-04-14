@@ -5,7 +5,7 @@ import Footer from './Footer';
 
 const Layout = ({ children }) => {
   return (
-    <div className='flex flex-col bg-gray-500 min-h-screen items-center'>
+    <div className='flex flex-col bg-gray-300 min-h-screen items-center'>
       <Head>
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />

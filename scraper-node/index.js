@@ -7,10 +7,11 @@ import { getImageSize } from './images.js';
 const XKCD_COMIC_INITIAL_ID = 2500;
 const XKCD_COMIC_MAX_ID = 2550;
 const COMICS_FOLDER_PATH = './comics';
+const COMICS_FRONTEND_FOLDER_PATH = '../frontend/comics';
 
 const indexFileContent = [];
 const endTime = time();
-const { writeJSON } = fs;
+const { writeJSON, copySync } = fs;
 
 for (let id = XKCD_COMIC_INITIAL_ID; id < XKCD_COMIC_MAX_ID; id++) {
   const URL = `https://xkcd.com/${id}/info.0.json`;
@@ -27,5 +28,11 @@ for (let id = XKCD_COMIC_INITIAL_ID; id < XKCD_COMIC_MAX_ID; id++) {
 }
 await writeJSON(`${COMICS_FOLDER_PATH}/index.json`, indexFileContent);
 log(`Wrote index.json...`);
+
+log(`Copying comics to frontend...`);
+await copySync(COMICS_FOLDER_PATH, COMICS_FRONTEND_FOLDER_PATH, {
+  overwrite: true,
+});
+log(`Comics copied ok...`);
 
 endTime();

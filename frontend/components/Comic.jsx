@@ -1,27 +1,52 @@
 import Image from 'next/image';
 
-const Comic = ({ title, alt, img, width, height, hover = true }) => {
+const Comic = ({
+  id,
+  title,
+  alt,
+  img,
+  width,
+  height,
+  hover = true,
+  showLinks = true,
+}) => {
   return (
     <div
       className={`card w-auto h-full bg-base-100 shadow-xl ${
-        hover ? 'hover:bg-base-300 hover:scale-95' : ''
+        hover ? 'hover:bg-base-300' : ''
       }`}
     >
-      <div className='card-body'>
+      <div className='card-body items-center'>
         <h2 className='card-title'>{title}</h2>
-        <p>{alt}</p>
+        <figure className='p-2'>
+          <Image
+            layout='intrinsic'
+            objectFit='contain'
+            width={width}
+            height={height}
+            src={img}
+            alt={alt}
+          />
+        </figure>
+        {/* <p>{alt}</p> */}
       </div>
-      <figure className='p-2'>
-        <Image
-          width='300'
-          height='300'
-          layout='intrinsic'
-          objectFit='contain'
-          src={img}
-          alt={alt}
-        />
-      </figure>
-      <span className='text-center'>{img}</span>
+
+      {showLinks && (
+        <span className='flex flex-row items-center justify-center space-x-1'>
+          <h2 className='font-bold uppercase'>Image URL:</h2>
+          <a href={img} alt={alt} target='_blank'>
+            {img}
+          </a>
+        </span>
+      )}
+      {showLinks && (
+        <span className='flex flex-row items-center justify-center space-x-1'>
+          <h2 className='font-bold uppercase'>Permanent Link:</h2>
+          <a href={`/comic/${id}`} alt={alt} target='_blank'>
+            {`${process.env.NEXT_PUBLIC_URL}/comic/${id}`}
+          </a>
+        </span>
+      )}
     </div>
   );
 };

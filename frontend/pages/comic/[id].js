@@ -21,11 +21,19 @@ const ComicPage = ({
   return (
     <div className='flex flex-col bg-gray-500 h-max items-center'>
       <Head>
-        <title>Comic {title}</title>
+        <title>xkcd 2.0 - Comic {title}</title>
         <meta name='description' content={alt} />
       </Head>
       <Layout>
-        <Comic title={title} alt={alt} img={img} hover={false} />
+        <Comic
+          id={id}
+          title={title}
+          alt={alt}
+          img={img}
+          width={width}
+          height={height}
+          hover={false}
+        />
         <div className='btn-group flex items-center justify-around mt-4'>
           {hasPrevious && (
             <Link href={`/comic/${previousId}`}>

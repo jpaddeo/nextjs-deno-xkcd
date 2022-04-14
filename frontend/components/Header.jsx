@@ -18,7 +18,7 @@ const Header = () => {
   };
 
   return (
-    <header className='flex items-center justify-between max-w-4xl mx-auto p-4'>
+    <header className='flex items-center justify-between max-w-4xl mx-auto p-4 w-full'>
       <Link href='/'>
         <a>
           <h1 className='text-sm transition hover:opacity-80'>
