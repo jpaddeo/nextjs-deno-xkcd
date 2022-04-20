@@ -1,19 +1,23 @@
-name: GitHub Actions Demo
+name: Download New XKCD Comics
+
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0,12 * * *'
-    
+    - cron: 0 12 * * *
+
 jobs:
   download-new-xkcd-comics:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
-      - run: cd scraper-node && npm install
-      - run: cd scraper-node && node index.js
+          node-version: 16.x
+      - run: |
+          cd ./scraper-node
+          npm install
+          node index.js
       - run: |
           git config user.name jpaddeo
           git config user.email jpaddeo@gmail.com
