@@ -34,7 +34,7 @@ const Comic = ({
       {showLinks && (
         <span className='flex flex-row items-center justify-center space-x-1'>
           <h2 className='font-bold uppercase'>Image URL:</h2>
-          <a href={img} alt={alt} target='_blank'>
+          <a href={img} alt={alt} target='_blank' rel="nofollow noopener noreferrer">
             {img}
           </a>
         </span>
@@ -42,7 +42,7 @@ const Comic = ({
       {showLinks && (
         <span className='flex flex-row items-center justify-center space-x-1'>
           <h2 className='font-bold uppercase'>Permanent Link:</h2>
-          <a href={`/comic/${id}`} alt={alt} target='_blank'>
+          <a href={`/comic/${id}`} alt={alt} target='_blank' rel="nofollow noopener noreferrer">
             {`${process.env.NEXT_PUBLIC_URL}/comic/${id}`}
           </a>
         </span>
