@@ -1,5 +1,5 @@
 # NextJS XKCD
-![Download new xkcd comics](https://github.com/jpaddeo/nextjs-deno-xkcd/workflows/Download%20new%20xkcd%20commics/badge.svg)
+![Download new xkcd comics](https://github.com/jpaddeo/nextjs-deno-xkcd/actions/workflows/download-new-xkcd-comics.yml/badge.svg)
 
 [xkcd](https://xkcd.com) project made with NextJS + Deno (scraper) & NodeJS (scraper) + Tailwind CSS
 
