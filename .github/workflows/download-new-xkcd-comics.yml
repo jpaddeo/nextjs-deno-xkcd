@@ -8,7 +8,7 @@ on:
 jobs:
   download-new-xkcd-comics:
     runs-on: ubuntu-latest
-
+    environment: production
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -19,8 +19,12 @@ jobs:
           npm install
           node index.js
       - run: |
+          cd ./updater-algolia-node
+          npm install
+          node index.js
+      - run: |
           git config user.name jpaddeo
           git config user.email jpaddeo@gmail.com
           git add .
-          git commit -m "Adding new comics"
+          git commit -m "Adding new comics" -S
           git push

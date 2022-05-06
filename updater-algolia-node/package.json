@@ -1,0 +1,32 @@
+{
+  "name": "updater-algolia-node",
+  "version": "1.0.0",
+  "description": "Updater / Uploader algolia's comic index",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpaddeo/nextjs-deno-xkcd.git"
+  },
+  "keywords": [
+    "algolia",
+    "updater",
+    "index",
+    "batch",
+    "nodejs"
+  ],
+  "author": "Juan Pablo Addeo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpaddeo/nextjs-deno-xkcd/issues"
+  },
+  "homepage": "https://github.com/jpaddeo/nextjs-deno-xkcd#readme",
+  "dependencies": {
+    "algoliasearch": "^4.13.0",
+    "dotenv": "^16.0.0",
+    "fs-extra": "^10.1.0",
+    "stream-json": "^1.7.4"
+  }
+}
