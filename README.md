@@ -8,9 +8,9 @@
 
 ## How to execute it on local env?
 
-You need to have `Node.js` >=14.x installed. Then run the following commands:
+You need to have `Node.js` >=14.x installed. Then run the following commands on the frontend folder:
 
 ```
-npm install # instalar las dependencias
-npm run dev # levantar el entorno de desarrollo
+npm install # install all projects dependencies
+npm run dev # starts dev environment
 ```
