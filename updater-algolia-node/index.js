@@ -1,9 +1,7 @@
 require('dotenv').config();
-
-import algoliasearch from 'algoliasearch';
-import fs from 'fs-extra';
-
-import StreamArray from 'stream-json/streamers/StreamArray';
+const algoliasearch = require('algoliasearch');
+const fs = require('fs');
+const StreamArray = require('stream-json/streamers/StreamArray');
 
 const algoliaClient = algoliasearch(
   process.env.ALGOLIA_APP_ID,
