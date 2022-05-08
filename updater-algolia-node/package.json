@@ -1,7 +1,6 @@
 {
   "name": "updater-algolia-node",
   "version": "1.0.0",
-  "type": "module",
   "description": "Updater / Uploader algolia's comic index",
   "main": "index.js",
   "scripts": {
