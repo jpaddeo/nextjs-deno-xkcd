@@ -26,5 +26,5 @@ jobs:
           git config user.name jpaddeo
           git config user.email jpaddeo@gmail.com
           git add .
-          git commit -m "Adding new comics" -S
+          git commit -m "Adding new comics and updating algolia index"
           git push
