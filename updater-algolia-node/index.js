@@ -16,6 +16,8 @@ const stream = fs
   .createReadStream(`${COMICS_FRONTEND_FOLDER_PATH}/index.json`)
   .pipe(StreamArray.withParser());
 
+const chunks = [];
+
 stream
   .on('data', ({ value }) => {
     chunks.push(value);
