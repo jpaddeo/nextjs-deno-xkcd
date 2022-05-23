@@ -26,6 +26,7 @@
   "homepage": "https://github.com/jpaddeo/nextjs-deno-xkcd#readme",
   "dependencies": {
     "axios": "^0.26.1",
+    "fast-glob": "^3.2.11",
     "fs-extra": "^10.0.1",
     "image-size": "^1.0.1"
   }

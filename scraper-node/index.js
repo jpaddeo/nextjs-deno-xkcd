@@ -13,7 +13,6 @@ const XKCD_LATEST_COMIC_ID = Number(
 const XKCD_COMIC_INITIAL_ID = XKCD_LATEST_COMIC_ID + 1;
 const XKCD_COMIC_MAX_ID = XKCD_COMIC_INITIAL_ID + 1;
 
-const indexFileContent = [];
 const endTime = time();
 const { writeJSON, copySync } = fs;
 
@@ -29,7 +28,6 @@ for (let id = XKCD_COMIC_INITIAL_ID; id < XKCD_COMIC_MAX_ID; id++) {
     const { height, width } = await getImageSize(img);
     log(`Got image dimensions #${num} (${height}x${width})...`);
     const comicToStore = { id, img, height, width, ...restOfComic };
-    indexFileContent.push(comicToStore);
     log(`Fetched comic#${num}...`);
     await writeJSON(`${COMICS_FOLDER_PATH}/${id}.json`, comicToStore);
     log(`Wrote #${num}.json...`);
@@ -38,9 +36,6 @@ for (let id = XKCD_COMIC_INITIAL_ID; id < XKCD_COMIC_MAX_ID; id++) {
     break;
   }
 }
-
-await writeJSON(`${COMICS_FOLDER_PATH}/index.json`, indexFileContent);
-log(`Wrote index.json...`);
 
 log(`Copying comics to frontend...`);
 await copySync(COMICS_FOLDER_PATH, COMICS_FRONTEND_FOLDER_PATH, {

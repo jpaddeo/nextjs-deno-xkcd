@@ -18,6 +18,7 @@ jobs:
           cd ./scraper-node
           npm install
           node index.js
+          node reindex-comics.js
       - run: |
           cd ./updater-algolia-node
           npm install
