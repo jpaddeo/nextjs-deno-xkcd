@@ -3,12 +3,16 @@ name: Download New XKCD Comics
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 0 * * *
+    - cron: 0 0 * * 1
 
 jobs:
   download-new-xkcd-comics:
     runs-on: ubuntu-latest
     environment: production
+    env:
+        ALGOLIA_ADMIN_APP_KEY: '${{ secrets.KEYSTORE_BASE64 }}'
+        ALGOLIA_APP_ID: '${{ secrets.ALGOLIA_APP_ID }}'    
+        ALGOLIA_SEARCH_APP_KEY: '${{ secrets.ALGOLIA_SEARCH_APP_KEY }}'
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -22,7 +26,7 @@ jobs:
       - run: |
           cd ./updater-algolia-node
           npm install
-          node index.js
+          ALGOLIA_ADMIN_APP_KEY=$ALGOLIA_ADMIN_APP_KEY ALGOLIA_APP_ID=$ALGOLIA_APP_ID ALGOLIA_SEARCH_APP_KEY=$ALGOLIA_SEARCH_APP_KEY node index.js
       - run: |
           git config user.name jpaddeo
           git config user.email jpaddeo@gmail.com
